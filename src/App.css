@@ -28,12 +28,12 @@
   position: fixed;
   right: 20px;
   top: 20px;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .close_btn {
   background-color: white;
   border: none;
   border-radius: 100px;
-
+  cursor: pointer;
 }

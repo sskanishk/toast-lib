@@ -3,7 +3,7 @@ import ToastContainer from "./ToastContainer"
 
 function useToast() {
 
-    const toastList = useStore((state) => state.toastList)
+    // const toastList = useStore((state) => state.toastList)
     const addToast = useStore((state) => state.addToast)
     const removeToastx = useStore((state) => state.removeToast)
 
@@ -11,18 +11,18 @@ function useToast() {
         switch (type) {
             case 'success':
                 addToast({ type, title: type })
-                setTimeout(() => removeToastx(type), 1000)
+                setTimeout(() => removeToastx(type), 2000)
                 break;
             case 'win':
                 addToast({ type, title: type })
-                setTimeout(() => removeToastx(type), 1000)
+                setTimeout(() => removeToastx(type), 2000)
                 break;
             default:
                 break;
         }
     }
 
-    const Xyz = () => {
+    const ToastBox = () => {
         return (
             <>
                 <ToastContainer position="right-top"  />
@@ -32,7 +32,7 @@ function useToast() {
 
     // debugger
 
-    return { toast, Xyz }
+    return { toast, ToastBox }
 
 }
 
