@@ -56,6 +56,6 @@
   cursor: pointer;
 }
 
-.toast__wrapper {
-  z-index: 9999;
+.toast__container {
+  z-index: 2147483647;
 }
