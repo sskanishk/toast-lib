@@ -1,0 +1,39 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.toast__wrapper {
+  height: 50px;
+  width: 250px;
+  background-color: aquamarine;
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.success {
+  background-color: green;
+}
+
+.win {
+  background-color: greenyellow;
+}
+
+.right-top {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background-color: yellow;
+}
+
+.close_btn {
+  background-color: white;
+  border: none;
+  border-radius: 100px;
+
+}
