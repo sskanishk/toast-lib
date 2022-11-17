@@ -11,11 +11,11 @@ function useToast() {
         switch (type) {
             case 'success':
                 addToast({ type, title, position, id: toastId })
-                // setTimeout(() => removeToastx(position, toastId), 4000)
+                setTimeout(() => removeToastx(position, toastId), 4000)
                 break;
             case 'error':
                 addToast({ type, title, position, id: toastId})
-                // setTimeout(() => removeToastx(position, toastId), 4000)
+                setTimeout(() => removeToastx(position, toastId), 4000)
                 break;
             default:
                 break;
