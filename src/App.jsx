@@ -1,5 +1,6 @@
 import './App.css'
 import useToast from './ToastLib/useToast'
+import codeSnipp from "../src/assets/carbon.svg"
 
 function App() {
 
@@ -10,14 +11,16 @@ function App() {
       type: "success",
       title: "Some text ....",
       position: position,
+      delay: 1000
     })
   }
 
   const toastHandler2 = () => {
     toast({
       type: "error",
-      title: "Some text ....",
+      title: "Some text. AutoClose:False",
       position: "right-bottom",
+      autoClose: false
     })
   }
 
@@ -31,6 +34,10 @@ function App() {
         <button className='action__btn' onClick={() => toastHandler2()}>Error</button>
       </div>
       <ToastBox />
+
+      <div>
+        <img src={codeSnipp} />
+      </div>
     </div>
   )
 }
