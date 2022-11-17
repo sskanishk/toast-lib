@@ -12,16 +12,28 @@ function App() {
 
   // debugger
 
-  const toastHandler = (type) => {
-    toast(type)
+  const toastHandler = () => {
+    toast({
+      type: "success",
+      title: "Some text ....",
+      position: "right-top",
+    })
+  }
+
+  const toastHandler2 = () => {
+    toast({
+      type: "win",
+      title: "Some text ....",
+      position: "right-bottom",
+    })
   }
 
   return (
     <div className="App">
       <div>
         <ToastBox />
-        <button onClick={() => toastHandler("success")}>Success</button>
-        <button onClick={() => toastHandler("win")}>Win</button>
+        <button onClick={() => toastHandler()}>Success</button>
+        <button onClick={() => toastHandler2()}>Win</button>
       </div>
     </div>
   )

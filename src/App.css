@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-.toast__wrapper {
+.toast__box {
   height: 50px;
   width: 250px;
   background-color: aquamarine;
@@ -31,9 +31,19 @@
   /* background-color: yellow; */
 }
 
+.right-bottom {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
 .close_btn {
   background-color: white;
   border: none;
   border-radius: 100px;
   cursor: pointer;
+}
+
+.toast__wrapper {
+  
 }

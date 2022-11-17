@@ -4,19 +4,66 @@ const useStore = create((set) => ({
 
     toastList: [],
 
+    // Template
+    // xyz: [
+    //     {
+    //         position: "right-top",
+    //         list: [
+    //             {
+    //                 type: "sccess",
+    //                 title: "something written here...",
+    //             }
+    //         ]
+    //     }
+    // ],
+
     addToast: (toast) => set((state) => {
-        // debugger
+        let toastArray = [ ...state.toastList ]
+
+        let categoryIndex = toastArray.findIndex((obj) => {
+            return obj.position === toast.position
+        })
+
+        if(categoryIndex < 0) {
+            toastArray.push({
+                position: toast.position,
+                list: [
+                    {
+                        type: toast.type,
+                        title: toast.title,
+                        id: toast.id
+                    }
+                ]
+            })
+        } else {
+            toastArray[categoryIndex].list.push({ type: toast.type, title: toast.title, id: id })
+        }
+
         return {
-            toastList: [
-                ...state.toastList,
-                { type: toast.type, title: toast.title, id: Math.random() * 100 },
-            ]
+            toastList: toastArray
         }
     }),
     
-    removeToast: (id) => set((state) => ({
-        toastList: state.toastList.filter((toast) => toast.type !== id),
-    })),
+    removeToast: (position, id) => set((state) => {
+        
+        let toastArray = [ ...state.toastList ]
+        
+        let categoryIndex = toastArray.findIndex((obj) => {
+            return obj.position === position
+        })
+
+        if(categoryIndex >= 0) {
+            toastArray[categoryIndex].list = [...toastArray[categoryIndex].list ].filter((toast) => toast.id !== id)
+            // debugger
+        }
+
+        // debugger
+
+        return {
+            toastList: toastArray
+        }
+        
+    }),
 
 }))
 

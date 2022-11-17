@@ -7,15 +7,15 @@ function useToast() {
     const addToast = useStore((state) => state.addToast)
     const removeToastx = useStore((state) => state.removeToast)
 
-    const toast = (type) => {
+    const toast = ({type, position, title}) => {
         switch (type) {
             case 'success':
-                addToast({ type, title: type })
-                setTimeout(() => removeToastx(type), 2000)
+                addToast({ type, title, position, id: Math.random() * 100 })
+                // setTimeout(() => removeToastx(type), 2000)
                 break;
             case 'win':
-                addToast({ type, title: type })
-                setTimeout(() => removeToastx(type), 2000)
+                addToast({ type, title, position, id: Math.random() * 100 })
+                // setTimeout(() => removeToastx(type), 2000)
                 break;
             default:
                 break;
@@ -25,7 +25,7 @@ function useToast() {
     const ToastBox = () => {
         return (
             <>
-                <ToastContainer position="right-top"  />
+                <ToastContainer />
             </>
         )
     }
