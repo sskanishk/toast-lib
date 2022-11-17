@@ -66,3 +66,10 @@
   align-items: center;
   gap: 10px;
 }
+
+.action__btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0px 10px;
+}
