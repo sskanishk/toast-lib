@@ -10,7 +10,6 @@ function ToastContainer({}) {
         <div className="toast__container">
             {
                 toastList.map((toast, _id) => {
-                    // return <Toast type={toast.type} title={toast.title} removeToastx={removeToastx}/>
                     return <ToastWrapper list={toast.list} position={toast.position} key={_id} />
                 })
             }
@@ -37,7 +36,7 @@ function Toast({toast, position}) {
     const removeToastx = useStore((state) => state.removeToast)
     
     return (
-        <div className={`toast__box ${toast.type || "deafult"}`}>
+        <div className={`toast__box ${toast.type}`}>
             <p>{toast.title}</p>
             <button className="close_btn" onClick={() => removeToastx(position, toast.id)}>x</button>
         </div>

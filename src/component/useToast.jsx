@@ -3,19 +3,19 @@ import ToastContainer from "./ToastContainer"
 
 function useToast() {
 
-    // const toastList = useStore((state) => state.toastList)
     const addToast = useStore((state) => state.addToast)
     const removeToastx = useStore((state) => state.removeToast)
 
     const toast = ({type, position, title}) => {
+        let toastId = Math.random() * 100
         switch (type) {
             case 'success':
-                addToast({ type, title, position, id: Math.random() * 100 })
-                // setTimeout(() => removeToastx(type), 2000)
+                addToast({ type, title, position, id: toastId })
+                setTimeout(() => removeToastx(position, toastId), 2000)
                 break;
-            case 'win':
-                addToast({ type, title, position, id: Math.random() * 100 })
-                // setTimeout(() => removeToastx(type), 2000)
+            case 'error':
+                addToast({ type, title, position, id: toastId})
+                setTimeout(() => removeToastx(position, toastId), 2000)
                 break;
             default:
                 break;

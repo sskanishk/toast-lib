@@ -36,7 +36,7 @@ const useStore = create((set) => ({
                 ]
             })
         } else {
-            toastArray[categoryIndex].list.push({ type: toast.type, title: toast.title, id: id })
+            toastArray[categoryIndex].list.push({ type: toast.type, title: toast.title, id: toast.id })
         }
 
         return {

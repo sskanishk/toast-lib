@@ -1,28 +1,21 @@
 import './App.css'
-// import ToastContainer from './component/ToastContainer'
-// import useStore from "./store"
 import useToast from './component/useToast'
 
 function App() {
 
-  // const addToast = useStore((state) => state.addToast)
-  // const removeToastx = useStore((state) => state.removeToast)
-
   const { toast, ToastBox } = useToast()
 
-  // debugger
-
-  const toastHandler = () => {
+  const toastSuccess = (position) => {
     toast({
       type: "success",
       title: "Some text ....",
-      position: "right-top",
+      position: position,
     })
   }
 
   const toastHandler2 = () => {
     toast({
-      type: "win",
+      type: "error",
       title: "Some text ....",
       position: "right-bottom",
     })
@@ -31,10 +24,13 @@ function App() {
   return (
     <div className="App">
       <div>
-        <ToastBox />
-        <button onClick={() => toastHandler()}>Success</button>
-        <button onClick={() => toastHandler2()}>Win</button>
+        <button onClick={() => toastSuccess("right-top")}>Success Right Top</button>
+        <button onClick={() => toastSuccess("right-bottom")}>Success Right Bottom</button>
+        <button onClick={() => toastSuccess("left-top")}>Success Left Top</button>
+        <button onClick={() => toastSuccess("left-bottom")}>Success Left Bottom</button>
+        <button onClick={() => toastHandler2()}>Error</button>
       </div>
+      <ToastBox />
     </div>
   )
 }

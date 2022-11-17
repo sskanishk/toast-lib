@@ -20,8 +20,8 @@
   background-color: green;
 }
 
-.win {
-  background-color: greenyellow;
+.error {
+  background-color: red;
 }
 
 .right-top {
@@ -37,6 +37,18 @@
   bottom: 20px;
 }
 
+.left-top {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+}
+
+.left-bottom {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+}
+
 .close_btn {
   background-color: white;
   border: none;
@@ -45,5 +57,5 @@
 }
 
 .toast__wrapper {
-  
+  z-index: 9999;
 }
